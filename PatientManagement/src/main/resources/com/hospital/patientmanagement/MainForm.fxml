@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.patientmanagement.MainFormController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="600.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@MainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../java/com/hospital/patientmanagement/images/userimg.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="58.0" layoutY="189.0" text="WELCOME" textFill="#f5eded">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="65.09999084472656" endY="-1.52587890625E-5" layoutX="118.0" layoutY="255.0" startX="-100.0" />
+                              <Button fx:id="dashboard_btn" layoutX="26.0" layoutY="295.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="148.0" styleClass="nav-btn" stylesheets="@MainForm.css" text="Dashboard" />
+                              <Button fx:id="list_btn" layoutX="27.0" layoutY="343.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="148.0" styleClass="nav-btn" stylesheets="@MainForm.css" text="Patient List" />
+                              <Button fx:id="setting_btn" layoutX="27.0" layoutY="390.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="148.0" styleClass="nav-btn" stylesheets="@MainForm.css" text="Setting" />
+                              <Button fx:id="logout_btn" layoutX="14.0" layoutY="545.0" mnemonicParsing="false" onAction="#logout" styleClass="nav-btn" stylesheets="@MainForm.css" text="Log out " />
+                              <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="216.0" prefHeight="26.0" prefWidth="169.0" text="Username" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="dashboard_form" layoutX="14.0" layoutY="14.0" prefHeight="600.0" prefWidth="800.0" styleClass="white-bg" stylesheets="@MainForm.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AreaChart fx:id="dashboard_chart" layoutX="26.0" layoutY="14.0" prefHeight="318.0" prefWidth="748.0" styleClass="white-bg" stylesheets="@MainForm.css" title="Data chart">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                              <AnchorPane layoutX="21.0" layoutY="376.0" prefHeight="198.0" prefWidth="758.0" styleClass="white-bg" stylesheets="@MainForm.css" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="patient_list_form" layoutX="47.0" layoutY="50.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="258.0" prefWidth="770.0" styleClass="white-bg" stylesheets="@MainForm.css">
+                                 <children>
+                                    <TextField fx:id="add_symptom" layoutX="436.0" layoutY="28.0" style="-fx-border-color: #999999;" />
+                                    <Label layoutX="27.0" layoutY="28.0" text="Name:" />
+                                    <TextField fx:id="add_name" layoutX="89.0" layoutY="25.0" style="-fx-border-color: #999999;" />
+                                    <Label layoutX="33.0" layoutY="84.0" text="Age:" />
+                                    <TextField fx:id="add_age" layoutX="89.0" layoutY="81.0" style="-fx-border-color: #999999;" />
+                                    <Label layoutX="24.0" layoutY="151.0" text="Gender:" />
+                                    <Label layoutX="24.0" layoutY="212.0" text="Address:" />
+                                    <TextField fx:id="add_address" layoutX="89.0" layoutY="209.0" style="-fx-border-color: #999999;" />
+                                    <Label layoutX="361.0" layoutY="31.0" text="Symtoms:" />
+                                    <Label layoutX="322.0" layoutY="88.0" text="Doctor in charge:" />
+                                    <TextField fx:id="add_doctor" layoutX="436.0" layoutY="85.0" style="-fx-border-color: #999999;" />
+                                    <Label layoutX="347.0" layoutY="154.0" text="Blood group:" />
+                                    <TextField fx:id="add_blood" layoutX="436.0" layoutY="151.0" style="-fx-border-color: #999999;" />
+                                    <ComboBox fx:id="add_gender" layoutX="90.0" layoutY="148.0" onAction="#genderList" prefWidth="150.0" promptText="Choose" />
+                                    <Button fx:id="add_btn" layoutX="634.0" layoutY="19.0" mnemonicParsing="false" onAction="#add_btn" prefHeight="34.0" prefWidth="109.0" styleClass="common-btn" stylesheets="@MainForm.css" text="Add" />
+                                    <Button fx:id="modify_btn" layoutX="634.0" layoutY="84.0" mnemonicParsing="false" onAction="#update_btn" prefHeight="34.0" prefWidth="109.0" styleClass="common-btn" stylesheets="@MainForm.css" text="Modify" />
+                                    <Button fx:id="delete_btn" layoutX="634.0" layoutY="146.0" mnemonicParsing="false" onAction="#delete_btn" prefHeight="34.0" prefWidth="109.0" styleClass="common-btn" stylesheets="@MainForm.css" text="Delete" />
+                                    <Button fx:id="clear_btn" layoutX="634.0" layoutY="205.0" mnemonicParsing="false" onAction="#clear_btn" prefHeight="34.0" prefWidth="109.0" styleClass="common-btn" stylesheets="@MainForm.css" text="Clear" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="16.0" layoutY="282.0" prefHeight="306.0" prefWidth="769.0" styleClass="white-bg" stylesheets="@MainForm.css">
+                                 <children>
+                                    <TextField fx:id="list_search" layoutX="26.0" layoutY="14.0" prefHeight="26.0" prefWidth="223.0" promptText="Search" />
+                                    <TableView fx:id="table_view" layoutX="14.0" layoutY="55.0" onMouseClicked="#selectData" prefHeight="242.0" prefWidth="742.0" styleClass="table" stylesheets="@MainForm.css">
+                                      <columns>
+                                        <TableColumn fx:id="list_col_id" prefWidth="60.79997253417969" text="ID" />
+                                        <TableColumn fx:id="list_col_name" prefWidth="90.4000244140625" text="Name" />
+                                          <TableColumn fx:id="list_col_age" prefWidth="51.99993896484375" text="Age" />
+                                          <TableColumn fx:id="list_col_gender" prefWidth="67.199951171875" text="Gender" />
+                                          <TableColumn fx:id="list_col_address" prefWidth="83.20001220703125" text="Address" />
+                                          <TableColumn fx:id="list_col_symptoms" prefWidth="167.199951171875" text="Symptoms" />
+                                          <TableColumn fx:id="list_col_doctor" prefWidth="97.5999755859375" text="Doctor in charge" />
+                                          <TableColumn fx:id="list_col_blood" prefWidth="78.4000244140625" text="Blood group" />
+                                          <TableColumn fx:id="list_col_date" prefWidth="118.40008544921875" text="Date" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

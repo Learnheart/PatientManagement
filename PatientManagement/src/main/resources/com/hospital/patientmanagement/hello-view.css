@@ -1,0 +1,9 @@
+.gradient {
+    -fx-background-color: linear-gradient(to bottom right, #2b98e7, #78b4df);
+}
+.login-img {
+    -fx-background-color: transparent;
+}
+.bg-form {
+    -fx-background-color: #FFF;
+}

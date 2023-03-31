@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hospital.patientmanagement.HelloController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bg-form" stylesheets="@hello-view.css">
+         <children>
+            <AnchorPane fx:id="si_loginForm" layoutX="264.0" layoutY="1.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="92.0" prefHeight="51.0" prefWidth="175.0" text="Login Account" textAlignment="CENTER" textFill="#408dd9">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font></Label>
+                  <TextField fx:id="si_username" layoutX="38.0" layoutY="168.0" onAction="#loginBtn" prefHeight="26.0" prefWidth="215.0" promptText="Username" />
+                  <PasswordField fx:id="si_password" layoutX="38.0" layoutY="221.0" onAction="#loginBtn" prefHeight="26.0" prefWidth="215.0" promptText="Password" />
+                  <Button fx:id="si_signin" layoutX="38.0" layoutY="305.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="43.0" prefWidth="215.0" text="Sign in" />
+                  <Hyperlink fx:id="si_forgot" layoutX="38.0" layoutY="260.0" onAction="#switchForgotPass" text="Forgot password?" textFill="#408dd9" />
+                  <ImageView fitHeight="51.0" fitWidth="82.0" layoutX="122.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/hospital/patientmanagement/images/userimg.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <AnchorPane fx:id="fg_Forgotform" layoutX="300.0" layoutY="7.0" prefHeight="400.0" prefWidth="300.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="28.0" prefHeight="51.0" prefWidth="175.0" text="Forgot password" textAlignment="CENTER" textFill="#141515">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fg_username" layoutX="42.0" layoutY="92.0" onAction="#regisBtn" prefHeight="26.0" prefWidth="215.0" promptText="Username" />
+                  <PasswordField fx:id="fg_password" layoutX="42.0" layoutY="143.0" onAction="#regisBtn" prefHeight="26.0" prefWidth="215.0" promptText="Password" />
+                  <Button fx:id="fg_proceed" layoutX="38.0" layoutY="250.0" mnemonicParsing="false" onAction="#proceedBtn" prefHeight="43.0" prefWidth="215.0" text="Proceed" />
+                  <Button fx:id="fg_back" layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onAction="#backToLoginForm" prefHeight="32.0" prefWidth="66.0" style="-fx-border-color: transparent;" text="&lt; Back" textFill="#3391d9" underline="true" />
+                  <PasswordField fx:id="fg_passConfirm" layoutX="42.0" layoutY="193.0" onAction="#regisBtn" prefHeight="26.0" prefWidth="215.0" promptText="Password confirm" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="su_signForm" layoutX="5.0" layoutY="1.0" prefHeight="400.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="92.0" prefHeight="51.0" prefWidth="175.0" text="Register Account" textAlignment="CENTER" textFill="#141515">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="su_username" layoutX="38.0" layoutY="168.0" onAction="#regisBtn" prefHeight="26.0" prefWidth="215.0" promptText="Username" />
+                  <PasswordField fx:id="su_password" layoutX="38.0" layoutY="221.0" onAction="#regisBtn" prefHeight="26.0" prefWidth="215.0" promptText="Password" />
+                  <Button fx:id="su_signupBtn" layoutX="38.0" layoutY="305.0" mnemonicParsing="false" onAction="#regisBtn" prefHeight="43.0" prefWidth="215.0" text="Sign up" />
+                  <ImageView fitHeight="51.0" fitWidth="82.0" layoutX="122.0" layoutY="41.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/com/hospital/patientmanagement/images/userimg.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="si_sideForm" layoutY="1.0" prefHeight="407.0" prefWidth="300.0" styleClass="gradient" stylesheets="@hello-view.css">
+               <children>
+                  <Button fx:id="side_create" layoutX="35.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="43.0" prefWidth="235.0" text="Create New Account" />
+                  <Label fx:id="side_label" contentDisplay="CENTER" layoutX="35.0" layoutY="281.0" prefHeight="51.0" prefWidth="175.0" text="Create Account" textAlignment="CENTER" textFill="#d9dadb">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                     </font></Label>
+                  <ImageView fx:id="patienticon" fitHeight="150.0" fitWidth="175.0" layoutX="79.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" styleClass="login-img">
+                     <image>
+                        <Image url="@../../../../java/com/hospital/patientmanagement/images/patientIcon.png" />
+                     </image>
+                     <effect>
+                        <Reflection fraction="0.44" topOpacity="0.07" />
+                     </effect>
+                     <viewport>
+                        <Rectangle2D width="58.0" />
+                     </viewport>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="32.0" layoutY="232.0" prefHeight="43.0" prefWidth="242.0" text="Patient Management System" textFill="#dcdada" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="14.0" text="Welcome to " textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="side_alreadybtn" layoutX="34.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="43.0" prefWidth="235.0" text="Already have account?" visible="false" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      
+   </stylesheets>
+</StackPane>

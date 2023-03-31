@@ -1,0 +1,33 @@
+.nav-form {
+    -fx-background-color: linear-gradient(to bottom, #3B5284, #5BA8A0);
+
+}
+
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER-LEFT;
+}
+.nav-btn:hover {
+    -fx-background-color: #336666;
+}
+.white-bg {
+    -fx-background-color: #fff;
+    -fx-border-radius: 10px;
+    -fx-border-color: grey;
+}
+.common-btn {
+    -fx-background-color: linear-gradient(to bottom, #3B5284, #5BA8A0);
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+.common-btn:hover {
+    -fx-background-color: #336666;
+}
+
+
+
