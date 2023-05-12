@@ -1,0 +1,20 @@
+.gradient {
+    -fx-background-color: linear-gradient(to bottom right, #2b98e7, #78b4df);
+}
+.login-img {
+    -fx-background-color: transparent;
+}
+.bg-form {
+    -fx-background-color: #FFF;
+}
+
+.exit-btn {
+    -fx-background-color:  transparent;
+    -fx-font-size: 12px;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+.exit-btn:hover {
+    -fx-background-color: #CC0000;
+    -fx-text-fill: #fff;
+}
